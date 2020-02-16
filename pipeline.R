@@ -136,4 +136,34 @@ maff_HeLaS3_HepG2_peaks <- maff_maff_HeLaS3_HepG2[,1][[1]]@common_peak
 maff_HeLaS3_HepG2_peaks[,2] <- maff_HeLaS3_HepG2_peaks[,2]-100
 maff_HeLaS3_HepG2_peaks[,3] <- maff_HeLaS3_HepG2_peaks[,3]+100
 write.table(maff_HeLaS3_HepG2_peaks[,1:3],"maff_maff_peaks_HeLaS3_HepG2.bed",sep="\t",quote=F,row.names=F,col.names=F)
+######################################################################### Exporting Target motif's matrix
+CEBPBCEBPB_K562 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_K562_CEBPB", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_K562_CEBPB") #intersection of CEBPB-CEBPB
 
+TFregulomeR::exportMMPFM(fun_output = CEBPBCEBPB_K562, 
+                         fun = "intersectPeakMatrix", 
+                         save_motif_PFM = TRUE, 
+                         save_betaScore_matrix = FALSE)
+##
+CEBPBCEBPB_HepG2 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_HepG2_CEBPB", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_HepG2_CEBPB") #intersection of CEBPB-CEBPB
+TFregulomeR::exportMMPFM(fun_output = CEBPBCEBPB_HepG2, 
+                         fun = "intersectPeakMatrix", 
+                         save_motif_PFM = TRUE, 
+                         save_betaScore_matrix = FALSE)
+##
+MAFFMAFF_K562 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_K562_MAFF", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_K562_MAFF") #intersection of MAFF-MAFF
+TFregulomeR::exportMMPFM(fun_output = MAFFMAFF_K562, 
+                         fun = "intersectPeakMatrix", 
+                         save_motif_PFM = TRUE, 
+                         save_betaScore_matrix = FALSE)
+##
+MAFF_HepG2 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_HepG2_MAFF", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_HepG2_MAFF") 
+TFregulomeR::exportMMPFM(fun_output = MAFF_HepG2, 
+                         fun = "intersectPeakMatrix", 
+                         save_motif_PFM = TRUE, 
+                         save_betaScore_matrix = FALSE)
+##
+MAFF_HeLaS3 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_HeLa-S3_MAFF", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_HeLa-S3_MAFF") #intersection of MAFF-MAFF
+TFregulomeR::exportMMPFM(fun_output = MAFF_HeLaS3, 
+                         fun = "intersectPeakMatrix", 
+                         save_motif_PFM = TRUE, 
+                         save_betaScore_matrix = FALSE)
