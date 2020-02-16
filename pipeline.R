@@ -167,3 +167,29 @@ TFregulomeR::exportMMPFM(fun_output = MAFF_HeLaS3,
                          fun = "intersectPeakMatrix", 
                          save_motif_PFM = TRUE, 
                          save_betaScore_matrix = FALSE)
+######################################## FPWMs exported
+#case 1
+source("./R/createFPWM.R")
+fpwm_CEBPB_K562_F5 <- createFPWM(mainTF ="CEBPB",
+                    partners = c("ATF4","ATF7","ATF3","JUND","FOS","CEBPD"),
+                    cell = "K562", 
+                    forkPosition = 5)
+source("./R/plotFPWM.R")
+plotFPWM(fpwm_CEBPB_K562_F5,pdfName="fpwm_CEBPB_K562_F5.pdf")
+source("./R/write.FPWM.R")
+write.FPWM(FPWM = fpwm_CEBPB_K562_F5,fileName="fpwm_CEBPB_K562_F5.transfac")
+write.FPWM(FPWM = fpwm_CEBPB_K562_F5,fileName="fpwm_CEBPB_K562_F5.FPWMtransfac",format="FPWMtransfac")
+## case 2
+source("./R/createFPWM.R")
+fpwm_CEBPB_HepG2_F4 <- createFPWM(mainTF ="CEBPB",
+                    partners = c("ATF4","ATF7","ATF3","JUND","FOS","CEBPD"),
+                    cell = "HepG2", 
+                    forkPosition = 4)
+source("./R/plotFPWM.R")
+plotFPWM(fpwm_CEBPB_HepG2_F4,pdfName="fpwm_CEBPB_HepG2_F4_plot.pdf")
+source("./R/write.FPWM.R")
+write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.transfac")
+write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.FPWMtransfac",format="FPWMtransfac")
+## case 3
+
+
