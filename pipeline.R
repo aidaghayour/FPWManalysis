@@ -203,3 +203,4 @@ source("./R/write.FPWM.R")
 write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.transfac")
 write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.FPWMtransfac",format="FPWMtransfac")
 ## case 4
+
