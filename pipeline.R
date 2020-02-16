@@ -192,4 +192,14 @@ write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.transfac")
 write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.FPWMtransfac",format="FPWMtransfac")
 ## case 3
 
-
+source("./R/createFPWM.R")
+fpwm_MAFF_K562_F3_flipped <- createFPWM(mainTF ="MAFF",
+                    partners = c("MAFG","C11orf30","NFE2","MAFK","ZNF316","NFE2l2"),
+                    cell = "K562", 
+                    forkPosition = 3,flipMatrix = TRUE)
+source("./R/plotFPWM.R")
+plotFPWM(fpwm_MAFF_K562_F3_flipped,pdfName="fpwm_MAFF_K562_F3_Flipped_plot.pdf")
+source("./R/write.FPWM.R")
+write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.transfac")
+write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.FPWMtransfac",format="FPWMtransfac")
+## case 4
