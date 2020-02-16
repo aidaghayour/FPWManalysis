@@ -94,3 +94,25 @@ write.table(maff_HepG2_K562_peaks[,1:3],"maff_maff_peaks_HepG2_K562.bed",sep="\t
 
 ################### Peaks of MAFF in HeLa-S3 compared to HepG2/K562
 
+maff_maff_HeLaS3_K562 <- commonPeaks(target_peak_id="MM1_HSA_HeLa-S3_MAFF",
+                                      motif_only_for_target_peak=TRUE,
+                                      compared_peak_id="MM1_HSA_K562_MAFF",
+                                      motif_only_for_compared_peak=TRUE,
+                                      methylation_profile_in_narrow_region=FALSE)
+
+maff_HeLaS3_K562_peaks <- maff_maff_HeLaS3_K562[,1][[1]]@common_peak
+maff_HeLaS3_K562_peaks[,2] <- maff_HeLaS3_K562_peaks[,2]-100
+maff_HeLaS3_K562_peaks[,3] <- maff_HeLaS3_K562_peaks[,3]+100
+write.table(maff_HeLaS3_K562_peaks[,1:3],"maff_maff_peaks_HeLaS3_K562.bed",sep="\t",quote=F,row.names=F,col.names=F)
+##
+maff_maff_HeLaS3_HepG2 <- commonPeaks(target_peak_id="MM1_HSA_HeLa-S3_MAFF",
+                                      motif_only_for_target_peak=TRUE,
+                                      compared_peak_id="MM1_HSA_HepG2_MAFF",
+                                      motif_only_for_compared_peak=TRUE,
+                                      methylation_profile_in_narrow_region=FALSE)
+
+maff_HeLaS3_HepG2_peaks <- maff_maff_HeLaS3_HepG2[,1][[1]]@common_peak
+maff_HeLaS3_HepG2_peaks[,2] <- maff_HeLaS3_HepG2_peaks[,2]-100
+maff_HeLaS3_HepG2_peaks[,3] <- maff_HeLaS3_HepG2_peaks[,3]+100
+write.table(maff_HeLaS3_HepG2_peaks[,1:3],"maff_maff_peaks_HeLaS3_HepG2.bed",sep="\t",quote=F,row.names=F,col.names=F)
+
