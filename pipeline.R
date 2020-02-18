@@ -188,8 +188,8 @@ fpwm_CEBPB_HepG2_F4 <- createFPWM(mainTF ="CEBPB",
 source("./R/plotFPWM.R")
 plotFPWM(fpwm_CEBPB_HepG2_F4,pdfName="fpwm_CEBPB_HepG2_F4_plot.pdf")
 source("./R/write.FPWM.R")
-write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.transfac")
-write.FPWM(FPWM = fpwm_CEBPB_K562_F4,fileName="fpwm_CEBPB_K562_F4.FPWMtransfac",format="FPWMtransfac")
+write.FPWM(FPWM = fpwm_CEBPB_HepG2_F4,fileName="fpwm_CEBPB_HepG2_F4.transfac")
+write.FPWM(FPWM = fpwm_CEBPB_HepG2_F4,fileName="fpwm_CEBPB_HepG2_F4.FPWMtransfac",format="FPWMtransfac")
 ## case 3
 
 source("./R/createFPWM.R")
