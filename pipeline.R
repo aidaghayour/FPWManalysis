@@ -196,7 +196,7 @@ source("./R/createFPWM.R")
 fpwm_MAFF_K562_F3_flipped <- createFPWM(mainTF ="MAFF",
                     partners = c("MAFG","C11orf30","NFE2","MAFK","ZNF316","NFE2l2"),
                     cell = "K562", 
-                    forkPosition = 3,flipMatrix = TRUE)
+                    forkPosition = 3,flipMatrix = TRUE,probabilityMatrix = FALSE, scaleFrequencyCounts = TRUE)
 source("./R/plotFPWM.R")
 plotFPWM(fpwm_MAFF_K562_F3_flipped,pdfName="fpwm_MAFF_K562_F3_Flipped_plot.pdf")
 source("./R/write.FPWM.R")
