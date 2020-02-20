@@ -203,4 +203,15 @@ source("./R/write.FPWM.R")
 write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.transfac")
 write.FPWM(FPWM = fpwm_MAFF_K562_F3_flipped,fileName="fpwm_MAFF_K562_F3_flipped.FPWMtransfac",format="FPWMtransfac")
 ## case 4
+##### Target: k562
+K562_HeLaS3_HepG2 <- createFPWM(mainTF_MMID = "MM1_HSA_K562_MAFF", partners_MMID = c("MM1_HSA_HeLa-S3_MAFF", "MM1_HSA_HepG2_MAFF"), forkPosition = 6,scaleFrequencyCounts = TRUE)
+write.FPWM(FPWM = K562_HeLaS3_HepG2,fileName="K562_HeLaS3_HepG2.transfac")
+write.FPWM(FPWM = K562_HeLaS3_HepG2,fileName="K562_HeLaS3_HepG2.FPWMtransfac",format="FPWMtransfac")
 
+#### target: HeLa-S3
+HeLaS3_HepG2_K562_flipped <- createFPWM(mainTF_MMID = "MM1_HSA_HeLa-S3_MAFF", partners_MMID = c("MM1_HSA_K562_MAFF", "MM1_HSA_HepG2_MAFF"), forkPosition = 6,scaleFrequencyCounts = TRUE)
+write.FPWM(FPWM = HeLaS3_HepG2_K562,fileName="HeLaS3_HepG2_K562.transfac")
+write.FPWM(FPWM = HeLaS3_HepG2_K562,fileName="HeLaS3_HepG2_K562.FPWMtransfac",format="FPWMtransfac")
+
+#### target: HepG2
+HepG2_K562_HeLaS3 <- createFPWM(mainTF_MMID = "MM1_HSA_HepG2_MAFF", partners_MMID = c("MM1_HSA_K562_MAFF", "MM1_HSA_HeLa-S3_MAFF"), forkPosition = 6,scaleFrequencyCounts = TRUE)
