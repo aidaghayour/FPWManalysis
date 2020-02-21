@@ -136,6 +136,16 @@ maff_HeLaS3_HepG2_peaks <- maff_maff_HeLaS3_HepG2[,1][[1]]@common_peak
 maff_HeLaS3_HepG2_peaks[,2] <- maff_HeLaS3_HepG2_peaks[,2]-100
 maff_HeLaS3_HepG2_peaks[,3] <- maff_HeLaS3_HepG2_peaks[,3]+100
 write.table(maff_HeLaS3_HepG2_peaks[,1:3],"maff_maff_peaks_HeLaS3_HepG2.bed",sep="\t",quote=F,row.names=F,col.names=F)
+########################################################## Peaks in HepG2 compared to H1-hSC/K562 (JUN)
+JUN_HepG2_H1hESC <- TFregulomeR::commonPeaks(target_peak_id="MM1_HSA_HepG2_JUN",
+                                motif_only_for_target_peak=TRUE,
+                                compared_peak_id="MM1_HSA_H1-hESC_JUN",
+                                motif_only_for_compared_peak=TRUE,
+                                methylation_profile_in_narrow_region=FALSE)
+JUN_HepG2_H1hESC <-JUN_HepG2_H1hESC[,1][[1]]@common_peak
+JUN_HepG2_H1hESC[,2] <- JUN_HepG2_H1hESC[,2]-100
+JUN_HepG2_H1hESC[,3] <- JUN_HepG2_H1hESC[,3]+100
+write.table(JUN_HepG2_H1hESC[,1:3],"JUN_HepG2_H1hESC.bed",sep="\t",quote=F,row.names=F,col.names=F)
 ######################################################################### Exporting Target motif's matrix
 CEBPBCEBPB_K562 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_K562_CEBPB", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_K562_CEBPB") #intersection of CEBPB-CEBPB
 
@@ -215,3 +225,6 @@ write.FPWM(FPWM = HeLaS3_HepG2_K562,fileName="HeLaS3_HepG2_K562.FPWMtransfac",fo
 
 #### target: HepG2
 HepG2_K562_HeLaS3 <- createFPWM(mainTF_MMID = "MM1_HSA_HepG2_MAFF", partners_MMID = c("MM1_HSA_K562_MAFF", "MM1_HSA_HeLa-S3_MAFF"), forkPosition = 6,scaleFrequencyCounts = TRUE)
+
+## Case 5
+JUN <- createFPWM(mainTF_MMID = "MM1_HSA_HepG2_JUN", partners_MMID = c("MM1_HSA_H1-hESC_JUN", "MM1_HSA_MCF-7_JUN","MM1_HSA_K562_JUN"), forkPosition = 10,scaleFrequencyCounts = TRUE,flipMatrix = TRUE)
