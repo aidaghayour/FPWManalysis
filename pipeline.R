@@ -228,3 +228,5 @@ HepG2_K562_HeLaS3 <- createFPWM(mainTF_MMID = "MM1_HSA_HepG2_MAFF", partners_MMI
 
 ## Case 5
 JUN <- createFPWM(mainTF_MMID = "MM1_HSA_HepG2_JUN", partners_MMID = c("MM1_HSA_H1-hESC_JUN", "MM1_HSA_MCF-7_JUN","MM1_HSA_K562_JUN"), forkPosition = 10,scaleFrequencyCounts = TRUE,flipMatrix = TRUE)
+## case 6
+JUND_flipped_5 <- FPWM::createFPWM(mainTF_MMID = "MM1_HSA_GM12878_JUND", partners_MMID = c("MM1_HSA_HCT116_JUND", "MM1_HSA_K562_JUND","MM1_HSA_H1-hESC_JUND","MM1_HSA_HepG2_JUND"), forkPosition = 9,scaleFrequencyCounts = TRUE,flipMatrix = TRUE)
