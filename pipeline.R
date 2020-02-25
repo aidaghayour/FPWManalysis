@@ -146,6 +146,26 @@ JUN_HepG2_H1hESC <-JUN_HepG2_H1hESC[,1][[1]]@common_peak
 JUN_HepG2_H1hESC[,2] <- JUN_HepG2_H1hESC[,2]-100
 JUN_HepG2_H1hESC[,3] <- JUN_HepG2_H1hESC[,3]+100
 write.table(JUN_HepG2_H1hESC[,1:3],"JUN_HepG2_H1hESC.bed",sep="\t",quote=F,row.names=F,col.names=F)
+########################################################## Peaks of case 6 (JUND)
+JUND_GM12878_HCT116 <- TFregulomeR::commonPeaks(target_peak_id="MM1_HSA_GM12878_JUND",
+                              motif_only_for_target_peak=TRUE,
+                              compared_peak_id="MM1_HSA_HCT116_JUND",
+                              motif_only_for_compared_peak=TRUE,
+                              methylation_profile_in_narrow_region=FALSE)
+JUND_GM12878_HCT116 <-JUND_GM12878_HCT116[,1][[1]]@common_peak
+JUND_GM12878_HCT116[,2] <- JUND_GM12878_HCT116[,2]-100
+JUND_GM12878_HCT116[,3] <- JUND_GM12878_HCT116[,3]+100
+write.table(JUND_GM12878_HCT116[,1:3],"JUND_GM12878_HCT116.bed",sep="\t",quote=F,row.names=F,col.names=F)
+
+JUND_GM12878_K562 <- TFregulomeR::commonPeaks(target_peak_id="MM1_HSA_GM12878_JUND",
+                              motif_only_for_target_peak=TRUE,
+                              compared_peak_id="MM1_HSA_K562_JUND",
+                              motif_only_for_compared_peak=TRUE,
+                              methylation_profile_in_narrow_region=FALSE)
+JUND_GM12878_K562 <-JUND_GM12878_K562[,1][[1]]@common_peak
+JUND_GM12878_K562[,2] <- JUND_GM12878_K562[,2]-100
+JUND_GM12878_K562[,3] <- JUND_GM12878_K562[,3]+100
+write.table(JUND_GM12878_K562[,1:3],"JUND_GM12878_K562.bed",sep="\t",quote=F,row.names=F,col.names=F)
 ######################################################################### Exporting Target motif's matrix
 CEBPBCEBPB_K562 <- TFregulomeR::intersectPeakMatrix(peak_id_x = "MM1_HSA_K562_CEBPB", motif_only_for_id_y = T,motif_only_for_id_x = T, peak_id_y = "MM1_HSA_K562_CEBPB") #intersection of CEBPB-CEBPB
 
